@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track-V Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Toggle Button -->
+      <button class="toggle-btn" id="toggleBtn" aria-label="Toggle sidebar">☰</button>
+
+      <div class="sidebar" id="sidebar">
+        <div class="logo">🚦 Track-V</div>
+        <div class="nav-item active" data-page="dashboard">📊 Dashboard</div>
+        <div class="nav-item" data-page="reports">📈 Reports</div>
+        <div class="nav-item" data-page="settings">⚙️ Settings</div>
+        <div class="nav-item" data-page="help">❓ Help</div>
+        <div class="nav-item" data-page="profile">👤 Profile</div>
+        <div class="nav-item" data-page="weather">🌤️ Weather</div>
+        <div class="nav-item" data-page="inspectors">👮 Inspectors</div>
+        <div class="nav-item" data-page="map">🗺️ Map View</div>
+        
+        <button class="button" style="width: 100%; margin-top: 20px; background: #f44336;" onclick="window.location.href='../index.html'">
+          🚪 Logout
+        </button>
+      </div>
+
+      <div class="main-content" id="mainContent">
+        <!-- Content will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <div id="addInspectorModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Inspector</h2>
+        <form id="addInspectorForm">
+          <input type="hidden" id="junctionId" name="junctionId" />
+          <label for="inspectorName">Name:</label>
+          <input
+            type="text"
+            id="inspectorName"
+            name="inspectorName"
+            required
+          /><br /><br />
+          <label for="inspectorPhone">Phone:</label>
+          <input
+            type="tel"
+            id="inspectorPhone"
+            name="inspectorPhone"
+            required
+          /><br /><br />
+          <label for="inspectorEmail">Email:</label>
+          <input
+            type="email"
+            id="inspectorEmail"
+            name="inspectorEmail"
+            required
+          /><br /><br />
+          <button type="submit" class="button">Add Inspector</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="sideNav.js"></script>
+
+    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/19195709-f157-43c6-a6fe-606890c37897/webchat/v2.1/config.js"></script>
+    <script>
+      // FAQ toggle functionality is now handled in sideNav.js
+      function toggleFAQ(element) {
+          const answer = element.nextElementSibling;
+          const arrow = element.querySelector('.arrow');
+          if (answer.style.display === 'none' || answer.style.display === '') {
+              answer.style.display = 'block';
+              arrow.innerHTML = '↑';
+          } else {
+              answer.style.display = 'none';
+              arrow.innerHTML = '↓';
+          }
+      }
+    </script>
+  </body>
+</html>
