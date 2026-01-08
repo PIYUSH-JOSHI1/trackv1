@@ -8,7 +8,7 @@ const SUPABASE_URL = 'https://kpouqjeocjiccskuxhle.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imtwb3VxamVvY2ppY2Nza3V4aGxlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc4ODU0MjcsImV4cCI6MjA4MzQ2MTQyN30.rxkTGV7ESIvnb5Ff4UCcvWFLiiVp0RN9xrQ8wp2sVEQ';
 
 // Backend API URL (Update this after deploying to Render)
-const BACKEND_URL = 'http://localhost:5000'; // Change to 'https://your-app.onrender.com' after deployment
+const BACKEND_URL = 'https://trackv1-1.onrender.com'; // Change to 'https://your-app.onrender.com' after deployment
 
 // Initialize Supabase Client
 let supabase = null;
@@ -703,3 +703,4 @@ window.TrackV = {
     // Backend URL
     BACKEND_URL
 };
+
